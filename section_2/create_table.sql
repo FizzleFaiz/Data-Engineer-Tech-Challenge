@@ -13,7 +13,7 @@ CREATE TABLE [IF NOT EXISTS] my_database.sales_trans (
    sales_ts timestamp,
    PRIMARY KEY (sales_id),
    FOREIGN KEY (cust_salesman_id)
-    REFERENCES (my_database.salesperson.cust_salesman_id)
+    REFERENCES (my_database.salesperson.salesman_id)
 );
 
 CREATE TABLE [IF NOT EXISTS] my_database.car (
@@ -25,11 +25,13 @@ CREATE TABLE [IF NOT EXISTS] my_database.car (
 );
 
 CREATE TABLE [IF NOT EXISTS] my_database.salesperson (
-   cust_salesman_id int NOT NULL,
-   cust_salesman_name varchar(255)  NOT NULL ,
-   cust_salesman_phone varchar(30)  NOT NULL,
+   salesman_id int NOT NULL,
+   salesman_name varchar(255)  NOT NULL ,
+   salesman_phone varchar(30)  NOT NULL,
    PRIMARY KEY (cust_salesman_id)
 );
+
+--Assumming that there is data in database
 
 
 END
